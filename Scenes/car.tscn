@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsaup4p401e0y"]
+[gd_scene load_steps=5 format=3 uid="uid://dsaup4p401e0y"]
 
-[ext_resource type="PackedScene" uid="uid://c7mm456q2j65w" path="res://Assets/raceFuture.glb" id="1_63bl5"]
+[ext_resource type="Script" path="res://Scripts/car.gd" id="1_ij2de"]
+[ext_resource type="PackedScene" uid="uid://bch1abikduvsj" path="res://Scenes/race_future_2.tscn" id="2_yirdf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fwf2n"]
 bounce = 0.1
@@ -12,8 +13,11 @@ radius = 1.0
 physics_material_override = SubResource("PhysicsMaterial_fwf2n")
 gravity_scale = 5.0
 angular_damp = 10.0
+script = ExtResource("1_ij2de")
 
 [node name="Sphere" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_c8lug")
 
-[node name="raceFuture2" parent="." instance=ExtResource("1_63bl5")]
+[node name="CarMesh" parent="." instance=ExtResource("2_yirdf")]
+
+[node name="RayCast3D" type="RayCast3D" parent="CarMesh"]
