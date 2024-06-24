@@ -13,3 +13,22 @@ config_version=5
 config/name="arcadeStyleGame"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://kcc_logo_square.png"
+
+[input]
+
+accelerate={
+"deadzone": 0.5,
+"events": []
+}
+brake={
+"deadzone": 0.5,
+"events": []
+}
+steer_left={
+"deadzone": 0.5,
+"events": []
+}
+steer_right={
+"deadzone": 0.5,
+"events": []
+}
