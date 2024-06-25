@@ -21,3 +21,4 @@ shape = SubResource("SphereShape3D_c8lug")
 [node name="CarMesh" parent="." instance=ExtResource("2_yirdf")]
 
 [node name="RayCast3D" type="RayCast3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
