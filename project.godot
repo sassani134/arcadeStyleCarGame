@@ -14,6 +14,14 @@ config/name="arcadeStyleGame"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://kcc_logo_square.png"
 
+[autoload]
+
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
+
 [input]
 
 accelerate={
