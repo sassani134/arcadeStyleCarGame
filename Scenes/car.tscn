@@ -46,18 +46,20 @@ shape = SubResource("SphereShape3D_c8lug")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999932, 0, 0, 0, 0.928477, 0.371365, 0, -0.371391, 0.928413, 0, 2.37137, 5.92841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("3_x2q64")
 
 [node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(0.999932, 0, 0, 0, 0.928477, 0.371365, 0, -0.371391, 0.928413, 0, 2.37137, 5.92841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 script = ExtResource("4_80avm")
 follow_mode = 6
 follow_target = NodePath("..")
-look_at_mode = 2
+look_at_mode = 1
 look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_lwnr1")
 camera_3d_resource = SubResource("Resource_1jbly")
 follow_offset = Vector3(0, 2, 5)
+follow_damping = true
+look_at_offset = Vector3(0, 1, 0)
