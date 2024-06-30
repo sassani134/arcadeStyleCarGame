@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dsaup4p401e0y"]
+[gd_scene load_steps=12 format=3 uid="uid://dsaup4p401e0y"]
 
 [ext_resource type="Script" path="res://Scripts/car.gd" id="1_ij2de"]
 [ext_resource type="PackedScene" uid="uid://bch1abikduvsj" path="res://Scenes/race_future_2.tscn" id="2_yirdf"]
@@ -12,6 +12,8 @@ bounce = 0.1
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c8lug"]
 radius = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_fmvpj"]
 
 [sub_resource type="Resource" id="Resource_dupl0"]
 script = ExtResource("5_e26mb")
@@ -37,8 +39,11 @@ gravity_scale = 5.0
 angular_damp = 10.0
 script = ExtResource("1_ij2de")
 
-[node name="Sphere" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_c8lug")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_fmvpj")
 
 [node name="CarMesh" parent="." instance=ExtResource("2_yirdf")]
 
@@ -56,7 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
 script = ExtResource("4_80avm")
 priority = 1
 follow_mode = 6
-follow_target = NodePath("..")
+follow_target = NodePath("../CarMesh")
 look_at_target = NodePath("..")
 tween_resource = SubResource("Resource_dupl0")
 camera_3d_resource = SubResource("Resource_1jbly")
