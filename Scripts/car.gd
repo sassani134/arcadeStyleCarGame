@@ -27,6 +27,7 @@ func _physics_process(delta):
 		apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 
 func _process(delta):
+	print(ground_ray.is_colliding())
 	if not ground_ray.is_colliding():
 		return
 	speed_input = Input.get_axis("brake","accelerate") * acceleration
