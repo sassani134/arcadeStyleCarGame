@@ -28,9 +28,9 @@ transform = Transform3D(0.798636, 0.592489, -0.105538, 0, 0.175367, 0.984503, 0.
 shadow_enabled = true
 
 [node name="Platform" type="CSGMesh3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 0.5, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 80, 0, 0, 1.04202)
 use_collision = true
 mesh = SubResource("BoxMesh_4kh2a")
 
 [node name="Car" parent="." instance=ExtResource("1_qt3yw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965336, 11.6122)
