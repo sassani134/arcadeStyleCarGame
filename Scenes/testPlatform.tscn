@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://blk6tbcbq8hsb"]
 
-[ext_resource type="PackedScene" uid="uid://dsaup4p401e0y" path="res://Scenes/car.tscn" id="1_qt3yw"]
+[ext_resource type="PackedScene" uid="uid://bss1thcedfmj2" path="res://Scenes/car_2.tscn" id="1_ne00s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lrgw3"]
 sky_top_color = Color(0.388235, 0.647059, 1, 1)
@@ -24,7 +24,7 @@ glow_enabled = true
 environment = SubResource("Environment_lvh4l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.798636, 0.592489, -0.105538, 0, 0.175367, 0.984503, 0.601815, -0.786259, 0.140054, 0, 0, 0)
+transform = Transform3D(0.798636, 0.592489, -0.105538, 0, 0.175367, 0.984503, 0.601815, -0.786259, 0.140054, 0, 12, 0)
 shadow_enabled = true
 
 [node name="Platform" type="CSGMesh3D" parent="."]
@@ -32,5 +32,5 @@ transform = Transform3D(10, 0, 0, 0, 0.5, 0, 0, 0, 80, 0, 0, 1.04202)
 use_collision = true
 mesh = SubResource("BoxMesh_4kh2a")
 
-[node name="Car" parent="." instance=ExtResource("1_qt3yw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965336, 11.6122)
+[node name="car2" parent="." instance=ExtResource("1_ne00s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03135, 0)

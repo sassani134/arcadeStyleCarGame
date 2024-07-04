@@ -15,13 +15,13 @@ radius = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_fmvpj"]
 
-[sub_resource type="Resource" id="Resource_dupl0"]
+[sub_resource type="Resource" id="Resource_ntx58"]
 script = ExtResource("5_e26mb")
 duration = 1.0
 transition = 0
 ease = 2
 
-[sub_resource type="Resource" id="Resource_1jbly"]
+[sub_resource type="Resource" id="Resource_vedwq"]
 script = ExtResource("6_o7dru")
 cull_mask = 1048575
 h_offset = 0.0
@@ -43,6 +43,7 @@ script = ExtResource("1_ij2de")
 shape = SubResource("SphereShape3D_c8lug")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+visible = false
 mesh = SubResource("SphereMesh_fmvpj")
 
 [node name="CarMesh" parent="." instance=ExtResource("2_yirdf")]
@@ -51,20 +52,17 @@ mesh = SubResource("SphereMesh_fmvpj")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("3_x2q64")
 
-[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target", "look_at_target")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6)
+[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 script = ExtResource("4_80avm")
-priority = 1
 follow_mode = 6
 follow_target = NodePath("../CarMesh")
-look_at_target = NodePath("..")
-tween_resource = SubResource("Resource_dupl0")
-camera_3d_resource = SubResource("Resource_1jbly")
-follow_offset = Vector3(0, 2, 5)
+tween_resource = SubResource("Resource_ntx58")
+camera_3d_resource = SubResource("Resource_vedwq")
+follow_offset = Vector3(0, 2, 2)
 follow_damping = true
-look_at_offset = Vector3(0, 1, 0)
