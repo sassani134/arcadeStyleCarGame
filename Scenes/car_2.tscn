@@ -40,9 +40,9 @@ script = ExtResource("1_35yw7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_g2fhk")
 
-[node name="suv" parent="." instance=ExtResource("1_t7q8c")]
+[node name="CarMesh" parent="." instance=ExtResource("1_t7q8c")]
 
-[node name="RayCast3D" type="RayCast3D" parent="suv"]
+[node name="RayCast3D" type="RayCast3D" parent="CarMesh"]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
@@ -50,11 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 [node name="PhantomCameraHost" type="Node" parent="Camera3D"]
 script = ExtResource("3_s6hu8")
 
-[node name="PhantomCamera3D" type="Node3D" parent="." node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
 script = ExtResource("4_gawlx")
 follow_mode = 6
-follow_target = NodePath("")
 tween_resource = SubResource("Resource_kb5og")
 camera_3d_resource = SubResource("Resource_msp1t")
 follow_offset = Vector3(0, 2, 2)
