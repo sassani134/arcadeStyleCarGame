@@ -34,7 +34,7 @@ far = 4000.0
 [node name="car2" type="RigidBody3D"]
 physics_material_override = SubResource("PhysicsMaterial_ckkkg")
 gravity_scale = 5.0
-angular_damp = 10.0
+linear_damp = 10.0
 script = ExtResource("1_35yw7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
